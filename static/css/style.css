@@ -1,0 +1,119 @@
+*{
+  color: #21243D;;
+}
+
+
+header ul{
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-family: 'Heebo', serif;
+  color: black;
+}
+
+ header a{
+  color: inherit;
+  text-decoration: none;
+}
+
+#avatar{
+  background: url(/static/img/photo_2023-06-23_11-14-43.jpg) center center/cover no-repeat ;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+h1{
+  font-size: 44px;
+  font-family: 'Heebo', serif;
+}
+header h2{
+  font-size: 16px;
+  font-family: 'Heebo', serif;
+  margin-top: 40px;
+}
+header button{
+  margin-top: 40px;
+}
+
+section h3{
+  font-size: 22px;
+  font-weight: 400;
+  font-family: 'Heebo', sans-serif;
+  
+}
+
+section h4{
+  font-size: 26px;
+  font-weight: 600;
+  font-family: 'Heebo', sans-serif;
+  color: #21243D;  
+  margin-top: 25px;
+  padding-left:  25px;
+  padding-right: 25px;
+}
+
+.post span{
+  padding-left:  25px;
+  padding-right: 25px;
+  margin-top: 17px;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: 'Heebo', sans-serif;
+  color: #21243D;
+}
+
+
+.post p{
+  padding-left:  25px;
+  padding-right: 25px;
+  margin-top: 17px;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: 'Heebo', sans-serif;
+  color: #21243D; 
+  padding-bottom: 32px;
+}
+.post{
+  margin-top: 20px;
+}
+
+
+main h3{
+  font-size: 22px;
+  font-weight: 400;
+  font-family: 'Heebo', sans-serif;
+  
+}
+
+main h4{
+  padding-left: 180px;
+  font-size: 30px;
+  font-weight: 600;
+  font-family: 'Heebo', sans-serif;
+  
+}
+main .year{
+
+  background-color: #142850;
+  border-radius: 16%;
+  max-height: 32px;
+  min-width: 60px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+}
+
+main .category{
+ 
+margin-left: 18px;
+  font-size: 20px;
+  font-weight: 300;
+  font-family: 'Heebo', sans-serif;
+}
+
+main p {
+  margin-top: 18px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Heebo', sans-serif;
+}
