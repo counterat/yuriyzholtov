@@ -117,3 +117,36 @@ main p {
   font-weight: 500;
   font-family: 'Heebo', sans-serif;
 }
+
+
+.works-img{
+  aspect-ratio: 246/180; float: left; padding-right: 18px;
+}
+
+
+@media only screen and (min-width: 768px) {
+  #content{
+    margin-top: 50px;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  #content{
+    margin-top: 50px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  #content{
+    margin-top: 50px;
+  }
+
+  .works-img{
+    float: none;
+    width: 100%;
+  }
+  main h4{
+    padding-left: 0;
+    margin-top: 50px;
+  }
+}
