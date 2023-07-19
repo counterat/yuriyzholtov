@@ -121,6 +121,8 @@ main p {
 
 .works-img{
   aspect-ratio: 246/180; float: left; padding-right: 18px;
+  width: 246px;
+  object-fit: contain;
 }
 
 

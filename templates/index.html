@@ -26,6 +26,13 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script >
+
+function downloadFile() {
+  window.location.href = '/static/CV_Yuriy_Zholtov.pdf';
+}
+</script>
 
 </head>
 <body>
@@ -65,7 +72,8 @@
                         <h2>
                             This is my blog about my programming journey. Here I will share my work with you.
                         </h2>
-                        <button class="btn btn-danger">Download Resume</button>
+                        <button class="btn btn-danger" onclick="downloadFile()"><a href="/static/CV_Yuriy_Zholtov.pdf" id="download" download="CV_Yuriy_Zholtov.pdf"></a> Download Resume</button>
+                       
                     </div>
                     <div class="col-4 col-lg-4 offset-lg-1 col-xl-3 offset-xl-1" id="avatar">
                         
@@ -83,14 +91,15 @@
                 <div class="col-1 offset-7">
                     <a href="">View all</a>
                 </div>
-
+                {% for post in Post_blog.objects.all() %}
                 <div class="col-10 col-lg-5  col-xl-5  post" style="background-color: white;" >
                     <h4 style="margin-top: 25px;">
-                        Making a design system from scratch
+                        {{post.title}}
                     </h4> 
-                    <span>12 Feb 2020  &nbsp;&nbsp; | &nbsp;&nbsp;  Design, Pattern</span>   
-                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                    <span>{{post.created_at}} &nbsp;&nbsp; | &nbsp;&nbsp; {{post.category}}  </span>   
+                    <p>{{post.content}}</p>
                 </div>
+                {% endfor %}
                 <div class="col-10  col-lg-5 offset-lg-1 col-xl-5  post" style="background-color: white;" >
                     <h4 style="margin-top: 25px;">
                         Making a design system from scratch
@@ -109,14 +118,16 @@
                 <div class="col-11 offset-1" style="margin-top: 36px;">
                     <h3>Featured Works</h3>
                 </div>
+                {% for work in Works_blog.objects.all()  %}
                 <div class="col-xl-10 offset-xl-1" style="margin-top: 36px; position: relative;">
-                    <img src="/static/img/Rectangle 30.png" class="works-img" alt="">
-                    <h4>Designing Dashboards</h4>
-                    <button class="btn btn-info year" >2020</button>
-                    <span class="category">Dashboard</span>
-                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                    <img src="{{work.images[0]}}" class="works-img" alt="">
+                    <h4>{{work.title}}</h4>
+                    <button class="btn btn-info year" >{{work.created_at}}</button>
+                    <span class="category">{{work.category}}</span>
+                    <p>{{work.content}}</p>
                     <div style="height: 2px; width: 100%; background-color: #E0E0E0 ; clear: both; margin-top: 55px;"></div>
                 </div>
+                {% endfor %}
                 <div class="col-xl-10 offset-xl-1" style="margin-top: 36px; position: relative;">
                     <img src="/static/img/Rectangle 30.png" class="works-img" alt="">
                     <h4>Designing Dashboards</h4>
